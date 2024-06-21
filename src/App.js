@@ -1,6 +1,5 @@
 import './App.css';
 import Appbar from './components/Appbar';
-import ImageCarousel from './components/ImageCarousel';
 import ProductInformation from './components/ProductInformation';
 import {useState} from 'react'
 
@@ -9,10 +8,11 @@ function App() {
   const [itemInCart, setItemInCart] = useState(false);
 
   return (
-    <div className="container relative">
+    <div className="relative">
         <Appbar setCount={setCount} count={count} setItemInCart={setItemInCart} itemInCart={itemInCart} />
-        <ImageCarousel/>
-        <ProductInformation count={count} setCount={setCount} setItemInCart={setItemInCart} />
+        <div className='md:flex md:gap-16 md:items-center md:mx-[120px] md:p-52'>
+          <ProductInformation count={count} setCount={setCount} setItemInCart={setItemInCart} />
+        </div>
     </div>
   );
 }
